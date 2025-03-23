@@ -1,0 +1,536 @@
+/* Modern CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #0a0a0a;
+    --text: #fff;
+    --primary: #64ffda;
+    --secondary: #112240;
+    --nav-height: 70px;
+    --border-radius: 4px;
+    --section-spacing: 20px;
+    --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: calc(var(--nav-height) + 20px);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.hero-text {
+    font-size: 1.5rem;
+    color: #8892b0;
+    margin-bottom: 2rem;
+}
+
+.hero-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-link {
+    padding: 1rem 2rem;
+    border: 1px solid var(--primary);
+    border-radius: var(--border-radius);
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-link:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+/* Section Styles */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: var(--section-spacing);
+    padding: 25px 2rem;
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Tech Stack */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.tech-card {
+    background-color: var(--secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+    opacity: 0.1;
+}
+
+.tech-card i {
+    font-size: 2.5rem;
+    transition: var(--transition);
+}
+
+/* Specific colors for each technology */
+.tech-card i.fa-python {
+    color: #3776AB; /* Python blue */
+}
+
+.tech-card i.fa-database {
+    color: #F29111; /* SQL orange */
+}
+
+.tech-card i.fa-html5 {
+    color: #E34F26; /* HTML orange */
+}
+
+.tech-card i.fa-css3-alt {
+    color: #264DE4; /* CSS blue */
+}
+
+.tech-card i.fa-js {
+    color: #F7DF1E; /* JavaScript yellow */
+}
+
+/* Add glow effect on hover */
+.tech-card:hover i.fa-python {
+    text-shadow: 0 0 15px rgba(55, 118, 171, 0.6);
+}
+
+.tech-card:hover i.fa-database {
+    text-shadow: 0 0 15px rgba(242, 145, 17, 0.6);
+}
+
+.tech-card:hover i.fa-html5 {
+    text-shadow: 0 0 15px rgba(227, 79, 38, 0.6);
+}
+
+.tech-card:hover i.fa-css3-alt {
+    text-shadow: 0 0 15px rgba(38, 77, 228, 0.6);
+}
+
+.tech-card:hover i.fa-js {
+    text-shadow: 0 0 15px rgba(247, 223, 30, 0.6);
+}
+
+/* Add subtle top border color */
+.tech-card:nth-child(1)::before {
+    background: #3776AB;
+}
+
+.tech-card:nth-child(2)::before {
+    background: #F29111;
+}
+
+.tech-card:nth-child(3)::before {
+    background: #E34F26;
+}
+
+.tech-card:nth-child(4)::before {
+    background: #264DE4;
+}
+
+.tech-card:nth-child(5)::before {
+    background: #F7DF1E;
+}
+
+/* Experience */
+.experience-card {
+    background-color: var(--secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+}
+
+.experience-content h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    color: #8892b0;
+    font-size: 1.1rem;
+}
+
+.duration {
+    color: #8892b0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.achievements {
+    list-style: none;
+}
+
+.achievements li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.achievements li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.achievements .highlight-achievement {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2ecc71;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.achievements .highlight-achievement::before {
+    display: none;
+}
+
+.achievements .highlight-achievement .cmp-badge__icon {
+    font-size: 1.2em;
+    color: #2ecc71;
+    vertical-align: middle;
+}
+
+.achievements .highlight-achievement:hover {
+    transform: translateX(10px);
+    background: rgba(46, 204, 113, 0.2);
+}
+
+/* Education */
+.education-card {
+    background-color: var(--secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+.education-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.university {
+    color: #8892b0;
+    font-size: 1.1rem;
+}
+
+.location, .graduation, .gpa {
+    margin-top: 0.5rem;
+}
+
+/* Certifications */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-card {
+    background-color: var(--secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-card i {
+    margin-bottom: 1rem;
+}
+
+.cert-card h3 {
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+/* Contact Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background-color: var(--secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(17, 34, 64, 0.8);
+}
+
+.contact-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+    color: #8892b0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #8892b0;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+    }
+
+    .nav {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .section {
+        padding: 20px 1rem;
+        margin-bottom: calc(var(--section-spacing) * 0.7);
+    }
+    
+    .hero-section {
+        padding-top: calc(var(--nav-height) + 10px);
+    }
+}
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Add hover effect to make particles interactive */
+.section:hover ~ #particles {
+    pointer-events: auto;
+}
+
+/* Projects */
+.project-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-content h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.github-link {
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.github-link:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.github-link i {
+    font-size: 1.2rem;
+}
+
+.project-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-details li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.project-details li::before {
+    content: '•';
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.project-details li:last-child {
+    margin-bottom: 0;
+} 
